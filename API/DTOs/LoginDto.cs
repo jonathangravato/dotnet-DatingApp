@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace API
+namespace API.DTOs
 {
-    public class RegisterDto
+    public class LoginDto
     {
         public string Username { get; set; }
         public string Password { get; set; }
