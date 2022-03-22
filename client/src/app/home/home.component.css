@@ -1,0 +1,8 @@
+#home-container,
+#home-container > .row {
+    height: calc(100vh - 56px);
+}
+
+h1.title-home {
+    font-size: 8rem;
+}
