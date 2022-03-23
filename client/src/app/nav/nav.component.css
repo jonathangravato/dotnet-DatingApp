@@ -5,3 +5,7 @@
     min-width: 160px;
     text-align: right;
 }
+
+.nav-item.separator {
+    margin-top: 0.85rem;
+}
