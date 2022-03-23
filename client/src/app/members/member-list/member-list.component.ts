@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./member-list.component.css']
 })
 export class MemberListComponent implements OnInit {
+  title: any;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.title = "User List Component";
   }
 
 }

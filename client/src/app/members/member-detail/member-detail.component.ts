@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./member-detail.component.css']
 })
 export class MemberDetailComponent implements OnInit {
+  title: any;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.title = "Member Detail Component";
   }
 
 }
