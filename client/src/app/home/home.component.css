@@ -1,6 +1,6 @@
 #home-container,
 #home-container > .row {
-    height: calc(100vh - 150px);
+    height: calc(100vh - 198px);
 }
 
 h1.title-home {
