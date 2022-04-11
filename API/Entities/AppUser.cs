@@ -22,11 +22,10 @@ namespace API.Entities
         public string City { get; set; }
         public string State { get; set; }
         public string Zipcode { get; set; }
-        
         public ICollection<Photo> Photos { get; set; }
-        public int GetAge()
-        {
-            return DateOfBirth.CalculateAge();
-        }
+        // public int GetAge()
+        // {
+        //     return DateOfBirth.CalculateAge();
+        // }
     }
 }
