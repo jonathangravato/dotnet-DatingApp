@@ -1,2 +1,71 @@
-<h5>{{title}}</h5>
-<p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<div *ngIf="member" class="card">
+    <div class="card-body">
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <img class="single-user-image mb-3" src="{{member.photoUrl || './assets/user.png'}}" alt="{{member.username}}">
+            </div>
+            <div class="col-md-6">
+                <table class="profile-list table">
+                    <tbody>
+                        <tr>
+                            <td colspan="2">
+                                <h5 class="card-title">{{member.knownAs}}</h5>
+                                <h6>{{member.title}}</h6>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Last Active:</td>
+                            <td>{{member.lastActive}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email:</td>
+                            <td>{{member.email}}</td>
+                        </tr>
+                        <tr>
+                            <td>Phone:</td>
+                            <td>{{member.phone}}</td>
+                        </tr>
+                        <tr>
+                            <td>Address:</td>
+                            <td>
+                                {{member.address1}} {{member.address2}}<br>
+                                {{member.city}}, {{member.state}} {{member.zipcode}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-3">
+                <ul class="profile-list">
+                    <li>
+                        <button class="btn btn-primary mb-2 w-100"><i class="fa fa-comment-o me-1"></i> Message</button>
+                    </li>
+                    <li>
+                        <button class="btn btn-info mb-2 w-100">Assign Task</button>
+                    </li>
+                </ul>
+                <div class="admin-functions">
+                    <div class="button-container text-right">
+                        <button class="btn btn-danger w-50" title="Delete User"><i class="fa fa-trash"></i></button>
+                        <button class="btn btn-success ms-1 w-50" title="Edit Profile"><i class="fa fa-pencil"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <tabset class="profile-tabset">
+                    <tab heading="Current Tasks">
+                        <p>No tasks are assigned to {{member.knownAs}}</p>
+                    </tab>
+                    <tab heading="Previous Tasks">
+                        <p>No tasks have been assigned to {{member.knownAs}}</p>
+                    </tab>
+                    <tab heading="Scheduled Tasks">
+                        <p>No tasks have been scheduled for {{member.knownAs}}</p>
+                    </tab>
+                </tabset>
+            </div>
+        </div>
+    </div>
+</div>
