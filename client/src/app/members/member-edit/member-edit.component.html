@@ -1,0 +1,97 @@
+<div *ngIf="member" class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-3">
+                <h1>Edit Profile</h1>
+            </div>
+            <div class="col-9">
+                <div class="alert alert-info" *ngIf="editForm.dirty">
+                    You have made changes. Any unsaved changes will be lost.
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <img class="single-user-image mb-3" src="{{member.photoUrl || './assets/user.png'}}" alt="{{member.username}}">
+            </div>
+            <div class="col-md-6">
+                <form #editForm="ngForm" id="editForm" (ngSubmit)="updateMember()">
+                    <table class="profile-list table">
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <h5 class="card-title">{{member.knownAs}}</h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Title:</td>
+                                <td><input class="form-control" [(ngModel)]="member.title" type="text" name="title" placeholder="{{member.title}}"></td>
+                            </tr>
+                            <tr>
+                                <td>Email:</td>
+                                <td><input class="form-control" [(ngModel)]="member.email" type="text" name="email" placeholder="{{member.email}}"></td>
+                            </tr>
+                            <tr>
+                                <td>Phone:</td>
+                                <td><input class="form-control" [(ngModel)]="member.phone" type="text" name="phone" placeholder="{{member.phone}}"></td>
+                            </tr>
+                            <tr>
+                                <td>Address 1:</td>
+                                <td>
+                                    <input class="form-control" [(ngModel)]="member.address1" type="text" name="address1" placeholder="{{member.address1}}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Address 2:</td>
+                                <td>
+                                    <input class="form-control" [(ngModel)]="member.address2" type="text" name="address2" placeholder="{{member.address2}}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>City:</td>
+                                <td>
+                                    <input class="form-control" [(ngModel)]="member.city" type="text" name="city" placeholder="{{member.city}}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>State:</td>
+                                <td>
+                                    <input class="form-control" [(ngModel)]="member.state" type="text" name="state" placeholder="{{member.state}}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Zipcode:</td>
+                                <td>
+                                    <input class="form-control" [(ngModel)]="member.zipcode" type="text" name="zipcode" placeholder="{{member.zipcode}}">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+            <div class="col-md-3">
+                <div class="admin-functions" *ngIf="editForm.dirty">
+                    <div class="button-container text-right">
+                        <button form="editForm" class="btn btn-success mb-2 btn-block" title="Save changes">Save</button>
+                        <button class="btn btn-danger btn-block" title="Cancel changes">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <tabset class="profile-tabset">
+                    <tab heading="Current Tasks">
+                        <p>No tasks are assigned to {{member.knownAs}}</p>
+                    </tab>
+                    <tab heading="Previous Tasks">
+                        <p>No tasks have been assigned to {{member.knownAs}}</p>
+                    </tab>
+                    <tab heading="Scheduled Tasks">
+                        <p>No tasks have been scheduled for {{member.knownAs}}</p>
+                    </tab>
+                </tabset>
+            </div>
+        </div>
+    </div>
+</div>

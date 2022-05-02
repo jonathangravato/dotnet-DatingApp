@@ -45,3 +45,8 @@
     padding: 15px 0;
   }
   
+  /* Member Component Items */
+
+  .single-user-image {
+    min-width: 250px;
+}
